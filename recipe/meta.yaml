@@ -10,8 +10,7 @@ source:
   sha256: 211eb7a07df89e277c87c75910dc781ea69f9a72abb888a3e83457bee688c112
 
 build:
-  noarch: python
-  number: 0
+  number: 1
   script: "{{ PYTHON }} -m pip install . -vv"
 
 requirements:
@@ -20,13 +19,13 @@ requirements:
     - python
 
   run:
-    - boto3 
+    - boto3
     - docopt
     - localstack-client
     - localstack-ext
     - python
     - six
-    - subprocess32
+    - subprocess32        # [py2k]
 
 test:
   imports:
