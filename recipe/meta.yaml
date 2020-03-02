@@ -1,17 +1,17 @@
 {% set name = "localstack" %}
-{% set version = "0.10.7" %}
+{% set version = "0.10.8" %}
 
 package:
-  name: "{{ name|lower }}"
-  version: "{{ version }}"
+  name: {{ name|lower }}
+  version: {{ version }}
 
 source:
-  url: "https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz"
-  sha256: a7182ce666ce0ab26f3753076008df420282276e8c4fae580806d4da9b0578ba
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  sha256: 81e39304e83e4b888f38361045d5df0f4d42947cd1d68327ca46ce103aea6be0
 
 build:
   number: 0
-  script: "{{ PYTHON }} -m pip install . -vv"
+  script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
@@ -55,13 +55,13 @@ test:
     - localstack.utils.server
 
 about:
-  home: "https://github.com/localstack/localstack"
-  license: "Apache-2.0"
-  license_family: "APACHE"
-  license_file: "LICENSE.txt"
-  summary: "An easy-to-use test/mocking framework for developing Cloud applications"
-  doc_url: "https://pypi.org/project/localstack/"
-  dev_url: "https://github.com/localstack/localstack"
+  home: https://github.com/localstack/localstack
+  license: Apache-2.0
+  license_family: APACHE
+  license_file: LICENSE.txt
+  summary: An easy-to-use test/mocking framework for developing Cloud applications
+  doc_url: https://pypi.org/project/localstack/
+  dev_url: https://github.com/localstack/localstack
 
 extra:
   recipe-maintainers:
