@@ -10,8 +10,9 @@ source:
   sha256: 81e39304e83e4b888f38361045d5df0f4d42947cd1d68327ca46ce103aea6be0
 
 build:
-  number: 1
+  number: 2
   script: {{ PYTHON }} -m pip install . -vv
+  skip: True  # [python_impl == 'pypy']
 
 requirements:
   host:
